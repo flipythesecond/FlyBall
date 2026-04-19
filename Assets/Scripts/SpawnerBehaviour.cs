@@ -3,7 +3,7 @@ using UnityEngine;
 public class SpawnerBehaviour : MonoBehaviour
 {
     public GameObject pipePrefab;
-    public float spawnRate = 2f;
+    public float spawnRate = 1f;
     public float heightOffset = 2f;
 
     private float timer = 0f;
@@ -28,7 +28,7 @@ public class SpawnerBehaviour : MonoBehaviour
         float highestPoint = transform.position.y + heightOffset;
 
         Instantiate(pipePrefab,
-            new Vector3(transform.position.x, Random.Range(lowestPoint, highestPoint), 0),
+            new Vector3(transform.position.x + 4f, Random.Range(lowestPoint, highestPoint), 0),
             Quaternion.identity);
     }
 
